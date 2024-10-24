@@ -39,7 +39,10 @@ to_currency = input("Enter to currency:")
 
 amount = int(input("Enter amount:"))
 
-BaseUrl = f"https://v6.exchangerate-api.com/v6/27fc268596f6e11309a199f3/pair/{from_currency}/{to_currency}/{amount}"
+apikey="27fc268596f6e11309a199f3"
+
+BaseUrl = f"https://v6.exchangerate-api.com/v6/{apikey}/pair/{from_currency}/{to_currency}/{amount}"
+
 converted_result=0
 try:
     
