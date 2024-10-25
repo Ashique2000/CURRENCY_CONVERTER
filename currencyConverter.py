@@ -2,7 +2,14 @@ import requests
 
 import pymysql
 
+import os
+
+from dotenv import load_dotenv
+
 from pymysql import MySQLError
+
+
+load_dotenv()
 
 try:
 
@@ -39,7 +46,7 @@ to_currency = input("Enter to currency:")
 
 amount = int(input("Enter amount:"))
 
-apikey="27fc268596f6e11309a199f3"
+apikey= os.getenv('apikey')
 
 BaseUrl = f"https://v6.exchangerate-api.com/v6/{apikey}/pair/{from_currency}/{to_currency}/{amount}"
 
