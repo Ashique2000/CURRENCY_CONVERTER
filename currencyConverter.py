@@ -1,23 +1,17 @@
 import requests
-
 import pymysql
-
 import os
-
 from dotenv import load_dotenv
-
 from pymysql import MySQLError
-
 
 load_dotenv()
 
 try:
-
     conn = pymysql.connect(
-        host="localhost",
-        user="root",
-        password="admin",
-        database="currencyconverterdb"
+        host=os.getenv('host'),
+        user=os.getenv('user'),
+        password=os.getenv('password'),
+        database=os.getenv('database')
     )
 
     print("Successfully connected to the database")
@@ -34,7 +28,6 @@ try:
         )
         ''')
 
-   
 except MySQLError as e:
 
     print(f"Error: {e}")
